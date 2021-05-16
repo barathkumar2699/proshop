@@ -8,3 +8,6 @@ PORT=5000
 MONGO_URI=mongodb://localhost/proshop
 JWT_SECRET=12345
 PAYPAL_CLIENT_ID=AZZB8zErDd8eGa0l4Uw5X1xf_qN_2IOukBu82E6TFOszLelqWJ8rEILCm5SJ8a31-E542w2VcoYHGUhF
+
+Procfile
+web: node backend/server.js
