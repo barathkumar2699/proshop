@@ -1,0 +1,517 @@
+{
+	"info": {
+		"_postman_id": "4d5bbeb7-8815-4ce4-9c3a-5e4b63451063",
+		"name": "Proshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductsById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/60a0cea11aefd61a0066ba3b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"60a0cea11aefd61a0066ba3b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTBjZWExMWFlZmQ2MWEwMDY2YmEzOSIsImlhdCI6MTYyMTE1Nzk0NSwiZXhwIjoxNjIzNzQ5OTQ1fQ.iyqWt-Tx95cxPdok93ZJyEl5nbSNNuhqHy4YCqPvCg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":5,\r\n    \"comment\":\"good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/60a0cea11aefd61a0066ba3b/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"60a0cea11aefd61a0066ba3b",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "authLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"barath@example.com\",\r\n    \"password\":\"barath\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWUxZTExYzI3MTcxNDNiMGU3NmYwMSIsImlhdCI6MTYyMDk3NjA0MSwiZXhwIjoxNjIzNTY4MDQxfQ.9NeH6wuf00bMBO0cR3RfIsHqR8S3lBTZcfFxxuY2Tfw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ba2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTYzMDkxYzgzN2JmNTY1NGVlM2E2OSIsImlhdCI6MTYyMDU2OTg3NSwiZXhwIjoxNjIzMTYxODc1fQ.nuDsIG59L1miyQkw12v8mCex6mQ7R3mESBpneDc6pEk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Barath Kumar\",\r\n    \"email\": \"barath@example.com\",\r\n    \"password\":\"barath\",\r\n    \"isAdmin\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "GetoOrderById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOWUxZTExYzI3MTcxNDNiMGU3NmYwMSIsImlhdCI6MTYyMDk3NjA0MSwiZXhwIjoxNjIzNTY4MDQxfQ.9NeH6wuf00bMBO0cR3RfIsHqR8S3lBTZcfFxxuY2Tfw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/609f911d5f4ec14b906eba57",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"609f911d5f4ec14b906eba57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTdmMjA1MzgwN2JmMzU3NDNkYzhlYSIsImlhdCI6MTYyMTA4MDU3OSwiZXhwIjoxNjIzNjcyNTc5fQ.FsXPARDOYl8k1bRhaiTsRggYHuFkuW7BslxGwPj2-Bo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/myorders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"myorders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "GetAllUsers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTYzMDkxYzgzN2JmNTY1NGVlM2E2OCIsImlhdCI6MTYyMTA4MDQ3MCwiZXhwIjoxNjIzNjcyNDcwfQ.Jos19mDuwOC0Cj3ALowPJqo2lC2ULzvRh7sU5hC2uEM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetOneUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTYzMDkxYzgzN2JmNTY1NGVlM2E2OCIsImlhdCI6MTYyMTA4MDU0MiwiZXhwIjoxNjIzNjcyNTQyfQ.tPqKDLZnoAtCVZ5noa_YmBAgDiDRym5nyOY657kPvls",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/60963091c837bf5654ee3a69",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"60963091c837bf5654ee3a69"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTYzMDkxYzgzN2JmNTY1NGVlM2E2OCIsImlhdCI6MTYyMTA4MDU0MiwiZXhwIjoxNjIzNjcyNTQyfQ.tPqKDLZnoAtCVZ5noa_YmBAgDiDRym5nyOY657kPvls",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/609fba59738211652c64acb5",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"609fba59738211652c64acb5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTYzMDkxYzgzN2JmNTY1NGVlM2E2OCIsImlhdCI6MTYyMTA4MDU0MiwiZXhwIjoxNjIzNjcyNTQyfQ.tPqKDLZnoAtCVZ5noa_YmBAgDiDRym5nyOY657kPvls",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"609fba8e738211652c64acb6\",\r\n    \"name\": \"Barath Kumar\",\r\n    \"email\": \"barath2@example.com\",\r\n    \"isAdmin\": \"true\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/609fba8e738211652c64acb6",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"609fba8e738211652c64acb6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Delete Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTYzMDkxYzgzN2JmNTY1NGVlM2E2OCIsImlhdCI6MTYyMTA4MDU0MiwiZXhwIjoxNjIzNjcyNTQyfQ.tPqKDLZnoAtCVZ5noa_YmBAgDiDRym5nyOY657kPvls",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/60963091c837bf5654ee3a6b",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"60963091c837bf5654ee3a6b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTBjZWExMWFlZmQ2MWEwMDY2YmEzOCIsImlhdCI6MTYyMTE1MTY1OSwiZXhwIjoxNjIzNzQzNjU5fQ.JA7QBWw7hZCIcWjSxIm-pEf4DkU2jk2nJO-op0B3DHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTBjZWExMWFlZmQ2MWEwMDY2YmEzOCIsImlhdCI6MTYyMTE1MTY1OSwiZXhwIjoxNjIzNzQzNjU5fQ.JA7QBWw7hZCIcWjSxIm-pEf4DkU2jk2nJO-op0B3DHM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test product\",\r\n    \"description\":\"test desc\",\r\n    \"price\":10,\r\n    \"category\":\"electronics\",\r\n    \"countInStock\":10,\r\n    \"image\":\"/images/sample.jpg\",\r\n    \"brand\":\"test brand\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/products/60a0cfb896bbab263ce2f0be",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"60a0cfb896bbab263ce2f0be"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
